@@ -7,6 +7,7 @@ void main() {
 class BljrDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+// TODO: implement build
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -66,27 +67,14 @@ class BljrDrawer extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => DetailPage(
-                          imagePath: 'images/reuni1.jpeg',
-                          title: 'Kenangan RPL X',
-                        ),
-                      ),
-                    );
-                  },
-                  child: Container(
-                    height: 200,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('images/reuni1.jpeg'),
-                        fit: BoxFit.cover,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
+                child: Container(
+                  height: 200,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage('images/reuni1.jpeg'), // Foto utama
+                      fit: BoxFit.cover,
                     ),
+                    borderRadius: BorderRadius.circular(8),
                   ),
                 ),
               ),
@@ -111,48 +99,22 @@ class BljrDrawer extends StatelessWidget {
                   mainAxisSpacing: 10,
                   physics: NeverScrollableScrollPhysics(),
                   children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(
-                              imagePath: 'images/Naya.jpeg',
-                              title: 'Foto Naya',
-                            ),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('images/Naya.jpeg'),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.circular(7),
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/Naya.jpeg'),
+                          fit: BoxFit.cover,
                         ),
+                        borderRadius: BorderRadius.circular(7),
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(
-                              imagePath: 'images/WAHWIRA.jpeg',
-                              title: 'Foto WAHWIRA',
-                            ),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('images/WAHWIRA.jpeg'),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.circular(7),
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/WAHWIRA.jpeg'),
+                          fit: BoxFit.cover,
                         ),
+                        borderRadius: BorderRadius.circular(7),
                       ),
                     ),
                   ],
@@ -179,48 +141,22 @@ class BljrDrawer extends StatelessWidget {
                   mainAxisSpacing: 10,
                   physics: NeverScrollableScrollPhysics(),
                   children: [
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(
-                              imagePath: 'images/sepeda.jpeg',
-                              title: 'Aktivitas Sepeda',
-                            ),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('images/sepeda.jpeg'),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.circular(7),
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/sepeda.jpeg'),
+                          fit: BoxFit.cover,
                         ),
+                        borderRadius: BorderRadius.circular(7),
                       ),
                     ),
-                    InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailPage(
-                              imagePath: 'images/monyet1.jpeg',
-                              title: 'Aktivitas Siswa',
-                            ),
-                          ),
-                        );
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage('images/monyet1.jpeg'),
-                            fit: BoxFit.cover,
-                          ),
-                          borderRadius: BorderRadius.circular(7),
+                    Container(
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage('images/monyet1.jpeg'),
+                          fit: BoxFit.cover,
                         ),
+                        borderRadius: BorderRadius.circular(7),
                       ),
                     ),
                   ],
@@ -236,41 +172,6 @@ class BljrDrawer extends StatelessWidget {
             BottomNavigationBarItem(icon: Icon(Icons.person), label: "Akun"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.shopping_bag), label: "Produk"),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-// Halaman Detail untuk setiap gambar
-class DetailPage extends StatelessWidget {
-  final String imagePath;
-  final String title;
-
-  DetailPage({required this.imagePath, required this.title});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Color.fromRGBO(141, 130, 124, 1),
-      ),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(height: 20),
-            Container(
-              height: 300,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(imagePath),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
           ],
         ),
       ),
